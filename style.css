@@ -1,0 +1,239 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;500;700&display=swap');
+
+:root {
+    --purple: #6c35a8;
+    --dark-purple: #211637;
+    --pink: #f4a7d7;
+    --yellow: #ffe27a;
+    --white: #fffaff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 10%, #59317c 0, transparent 30%),
+        radial-gradient(circle at 80% 80%, #42295d 0, transparent 30%),
+        var(--dark-purple);
+    color: var(--white);
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .4;
+    background-image:
+        radial-gradient(#fff 1px, transparent 1px),
+        radial-gradient(#f4a7d7 1px, transparent 1px);
+    background-size: 55px 55px, 90px 90px;
+    background-position: 0 0, 30px 30px;
+}
+
+.game {
+    width: min(92%, 650px);
+    margin: 35px auto 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.screen {
+    display: none;
+    text-align: center;
+    padding: 30px 20px;
+    border: 2px solid #9e70c5;
+    border-radius: 28px;
+    background: rgba(35, 22, 54, .94);
+    box-shadow: 0 0 35px rgba(155, 93, 207, .2);
+    animation: appear .5s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+.eyebrow {
+    color: var(--pink);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+h1, h2 {
+    font-family: 'Press Start 2P', monospace;
+    color: var(--yellow);
+    line-height: 1.8;
+    font-size: clamp(19px, 4vw, 29px);
+}
+
+h2 {
+    font-size: clamp(17px, 3.5vw, 24px);
+}
+
+.description {
+    color: #eadff4;
+    line-height: 1.8;
+    font-size: 17px;
+    max-width: 480px;
+    margin: 20px auto;
+}
+
+.pokemon {
+    font-size: 75px;
+    display: inline-block;
+    filter: drop-shadow(0 8px 5px rgba(0,0,0,.25));
+    animation: float 3s ease-in-out infinite;
+}
+
+.pokemon-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 15px 0 25px;
+}
+
+.gengar {
+    text-shadow: 0 0 20px #9b5dce;
+}
+
+.clefairy {
+    text-shadow: 0 0 20px #f4a7d7;
+}
+
+button {
+    border: none;
+    border-radius: 15px;
+    padding: 16px 24px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--dark-purple);
+    background: linear-gradient(135deg, var(--pink), var(--yellow));
+    box-shadow: 0 5px 0 #a66c9c;
+    transition: transform .2s, box-shadow .2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #a66c9c;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #a66c9c;
+}
+
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+.pokeballs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.pokeball {
+    width: 85px;
+    height: 85px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 40px;
+    background: #fff;
+    box-shadow: 0 5px 0 #c8a8d5;
+}
+
+.pokeball:hover {
+    transform: translateY(-8px) rotate(10deg);
+}
+
+.feedback {
+    min-height: 25px;
+    color: var(--pink);
+    font-weight: 700;
+}
+
+.letter {
+    text-align: left;
+    line-height: 1.9;
+    font-size: 17px;
+    background: #fff6fc;
+    color: #3b244b;
+    border-radius: 18px;
+    padding: 25px;
+    margin: 25px 0;
+    border: 3px dashed #d59bc6;
+}
+
+.signature {
+    color: #794d9d;
+    font-weight: 700;
+    text-align: right;
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 15px 20px 25px;
+    color: #c9b5d8;
+    font-size: 13px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    .game {
+        margin-top: 18px;
+    }
+
+    .screen {
+        padding: 25px 15px;
+    }
+
+    .pokemon {
+        font-size: 60px;
+    }
+
+    .pokemon-row {
+        gap: 20px;
+    }
+
+    .pokeballs {
+        gap: 12px;
+    }
+
+    .pokeball {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+
+    .letter {
+        font-size: 16px;
+        padding: 18px;
+    }
+}

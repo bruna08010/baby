@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma carta para o meu amor💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="stars"></div>
+
+    <main class="game">
+
+        <!-- Tela inicial -->
+        <section id="start-screen" class="screen active">
+            <div class="pokemon gengar">👻</div>
+
+            <p class="eyebrow">POKÉMON ADVENTURE</p>
+            <h1>Uma carta especial!</h1>
+
+            <p class="description">
+                Clefairy preparou uma surpresa
+                para uma pessoa muito especial.
+            </p>
+
+            <div class="pokemon-row">
+                <div class="pokemon gengar">👻</div>
+            </div>
+
+            <button id="start-btn">Abra a carta ✨</button>
+        </section>
+
+        <!-- Tela da missão -->
+        <section id="mission-screen" class="screen">
+            <p class="eyebrow">ops! adivinhe onde esta</p>
+            <h2>Encontre a surpresa!</h2>
+
+            <p class="description">
+                Gengar escondeu uma Pokébola especial.
+                Escolha uma das opções para encontrar o presente.
+            </p>
+
+            <div class="pokeballs">
+                <button class="pokeball" data-correct="false">⚪</button>
+                <button class="pokeball" data-correct="true">⚪</button>
+                <button class="pokeball" data-correct="false">⚪</button>
+            </div>
+
+            <p id="mission-message" class="feedback">
+                Escolha uma Pokébola!
+            </p>
+        </section>
+
+        <!-- Tela da surpresa -->
+        <section id="surprise-screen" class="screen">
+            <div class="pokemon clefairy">🌙</div>
+
+            <p class="eyebrow">VC ACERTOU!</p>
+            <h2>Você encontrou a surpresa!</h2>
+
+            <p class="description">
+                Clefairy guardou uma mensagem especial
+                para você. Está pronto para abrir?
+            </p>
+
+            <button id="open-letter-btn">
+                Abrir presente 🎁
+            </button>
+        </section>
+
+        <!-- Carta -->
+        <section id="letter-screen" class="screen">
+            <div class="pokemon-row">
+                <div class="pokemon gengar">👻</div>
+            </div>
+
+            <p class="eyebrow">UMA MENSAGEM ESPECIAL</p>
+            <h2>Feliz aniversário, baby! 💜</h2>
+
+            <div class="letter">
+                <p>
+                    Feliz aniversário, baby! 🎂
+                </p>
+
+                <p>
+                    Que seu dia seja tão especial quanto
+                    você é para mim. Espero que todos os
+                    seus sonhos se realizem e que nunca
+                    faltem motivos para você sorrir.
+                </p>
+
+                <p>
+                    Gengar e Clefairy vieram te lembrar
+                    que você é uma pessoa muito querida.
+                    Obrigada por fazer parte da minha vida.
+                    TE AMO MUITÃO💜
+                </p>
+
+                <p class="signature">
+                    Com muito amor, sua treinadora favorita 💜
+                </p>
+            </div>
+
+            <button id="restart-btn">Jogar novamente 🔄</button>
+        </section>
+
+    </main>
+
+    <footer>
+        Feito com amor e magia Pokémon ✨
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
